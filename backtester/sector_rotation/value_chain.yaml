@@ -1,0 +1,65 @@
+# 밸류체인 매핑 — 4섹터 × 티어 × 종목
+#
+# 백테스트 시 각 섹터의 모든 티어 종목을 후보군으로 두고,
+# 외인+기관 5일 누적 순매수 강도가 가장 강한 Top-N 종목만 보유한다.
+# 티어 분류는 향후 분석/리포팅용 메타데이터로도 사용된다.
+#
+# 종목 수 가이드: 각 섹터 8~15개 정도가 적당 (너무 적으면 Top-N 후보 부족, 너무 많으면 데이터 수집 부담)
+
+반도체:
+  tier1_leading:        # 메모리/시스템 IC (리딩)
+    - { code: "005930", name: "삼성전자" }
+    - { code: "000660", name: "SK하이닉스" }
+  tier2_equipment_front:   # 전공정 장비
+    - { code: "240810", name: "원익IPS" }
+    - { code: "036930", name: "주성엔지니어링" }
+    - { code: "319660", name: "피에스케이" }
+  tier3_equipment_back:    # 후공정/검사 장비
+    - { code: "042700", name: "한미반도체" }
+    - { code: "039030", name: "이오테크닉스" }
+  tier4_materials:         # 소재/부품
+    - { code: "036490", name: "SK머티리얼즈" }
+    - { code: "005070", name: "코스모신소재" }
+  tier5_pcb:               # PCB / 패키지
+    - { code: "222800", name: "심텍" }
+    - { code: "008060", name: "대덕전자" }
+
+2차전지:
+  tier1_leading:        # 셀 메이커
+    - { code: "373220", name: "LG에너지솔루션" }
+    - { code: "006400", name: "삼성SDI" }
+    - { code: "096770", name: "SK이노베이션" }
+  tier2_cathode:        # 양극재
+    - { code: "247540", name: "에코프로비엠" }
+    - { code: "003670", name: "포스코퓨처엠" }
+    - { code: "066970", name: "엘앤에프" }
+  tier3_anode_separator:   # 음극재/분리막/전해질
+    - { code: "078600", name: "대주전자재료" }
+    - { code: "361610", name: "SK아이이테크놀로지" }
+  tier4_equipment:      # 배터리 장비
+    - { code: "137400", name: "피엔티" }
+
+로봇:
+  tier1_leading:        # 완성 로봇/시스템 통합
+    - { code: "454910", name: "두산로보틱스" }
+    - { code: "277810", name: "레인보우로보틱스" }
+  tier2_reducer_motor:  # 감속기/모터
+    - { code: "058610", name: "에스피지" }
+    - { code: "108490", name: "로보티즈" }
+  tier3_components:     # 부품/액추에이터/센서
+    - { code: "066310", name: "큐에스아이" }
+
+전력:
+  tier1_leading:        # 중전기/전력기기
+    - { code: "298040", name: "효성중공업" }
+    - { code: "267260", name: "HD현대일렉트릭" }
+    - { code: "010120", name: "LS ELECTRIC" }
+  tier2_transformer:    # 변압기 전문
+    - { code: "062040", name: "산일전기" }
+    - { code: "192410", name: "제룡전기" }
+  tier3_nuclear:        # 원전 EPC/부품
+    - { code: "034020", name: "두산에너빌리티" }
+    - { code: "052690", name: "한전기술" }
+    - { code: "051600", name: "한전KPS" }
+  tier4_cable:          # 송배전/케이블
+    - { code: "001440", name: "대한전선" }
